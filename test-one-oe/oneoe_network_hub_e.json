@@ -8,10 +8,10 @@
                 "category_compartment_id"                              : "CMP-LZ-NETWORK-KEY",
 
                 "vcns": {
-                    "VCN-FRA-LZ-HUB-KEY": {
-                        "display_name"                                 : "vcn-fra-lz-hub",
+                    "VCN-JED-LZ-HUB-KEY": {
+                        "display_name"                                 : "vcn-jed-lz-hub",
                         "cidr_blocks"                                  : ["10.0.0.0/21"],
-                        "dns_label"                                    : "vcnfralzhub",
+                        "dns_label"                                    : "vcnjedlzhub",
                         "block_nat_traffic"                            : false,
                         "is_attach_drg"                                : false,
                         "is_create_igw"                                : false,
@@ -19,88 +19,88 @@
                         "is_oracle_gua_allocation_enabled"             : false,
 
                         "subnets": {
-                            "SN-FRA-LZ-HUB-LB-KEY": {
-                                "display_name"                         : "sn-fra-lz-hub-lb",
+                            "SN-JED-LZ-HUB-LB-KEY": {
+                                "display_name"                         : "sn-jed-lz-hub-lb",
                                 "cidr_block"                           : "10.0.0.0/24",
-                                "dns_label"                            : "snfrahublb",
+                                "dns_label"                            : "snjedhublb",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : false,
                                 "prohibit_public_ip_on_vnic"           : false,
-                                "route_table_key"                      : "RT-FRA-LZ-HUB-LB-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-HUB-LB-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-HUB-LB-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-HUB-LB-KEY"]
                             },
 
-                            "SN-FRA-LZ-HUB-MGMT-KEY": {
-                                "display_name"                         : "sn-fra-lz-hub-mgmt",
+                            "SN-JED-LZ-HUB-MGMT-KEY": {
+                                "display_name"                         : "sn-jed-lz-hub-mgmt",
                                 "cidr_block"                           : "10.0.1.0/24",
-                                "dns_label"                            : "snfrahubmgmt",
+                                "dns_label"                            : "snjedhubmgmt",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-HUB-MGMT-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-HUB-MGMT-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-HUB-MGMT-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-HUB-MGMT-KEY"]
                             },
 
-                            "SN-FRA-LZ-HUB-MON-KEY": {
-                                "display_name"                         : "sn-fra-lz-hub-mon",
+                            "SN-JED-LZ-HUB-MON-KEY": {
+                                "display_name"                         : "sn-jed-lz-hub-mon",
                                 "cidr_block"                           : "10.0.2.0/24",
-                                "dns_label"                            : "snfrahubmon",
+                                "dns_label"                            : "snjedhubmon",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-HUB-MGMT-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-HUB-MGMT-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-HUB-MGMT-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-HUB-MGMT-KEY"]
                             },
 
-                            "SN-FRA-LZ-HUB-DNS": {
-                                "display_name"                         : "sn-fra-lz-hub-dns",
+                            "SN-JED-LZ-HUB-DNS": {
+                                "display_name"                         : "sn-jed-lz-hub-dns",
                                 "cidr_block"                           : "10.0.3.0/24",
-                                "dns_label"                            : "snfrahubdns",
+                                "dns_label"                            : "snjedhubdns",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-HUB-MGMT-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-HUB-MGMT-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-HUB-MGMT-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-HUB-MGMT-KEY"]
                             }
                         },
 
                         "route_tables": {
-                            "RT-FRA-LZ-HUB-LB-KEY": {
-                                "display_name"                         : "rt-fra-lz-hub-lb",
+                            "RT-JED-LZ-HUB-LB-KEY": {
+                                "display_name"                         : "rt-jed-lz-hub-lb",
 
                                 "route_rules": {
                                     "rt-internet": {
                                         "description"                  : "Route to the Internet through Internet GW",
                                         "destination"                  : "0.0.0.0/0",
                                         "destination_type"             : "CIDR_BLOCK",
-                                        "network_entity_key"           : "IGW-FRA-LZ-HUB-KEY"
+                                        "network_entity_key"           : "IGW-JED-LZ-HUB-KEY"
                                     },
 
-                                    "rt-fra-prod-projects": {
+                                    "rt-jed-prod-projects": {
                                         "description"                  : "Route to VCN Prod Projects through DRG",
                                         "destination"                  : "10.0.64.0/21",
                                         "destination_type"             : "CIDR_BLOCK",
-                                        "network_entity_key"           : "DRG-FRA-LZ-HUB-KEY"
+                                        "network_entity_key"           : "DRG-JED-LZ-HUB-KEY"
                                     }
                                 }
                             },
 
-                            "RT-FRA-LZ-HUB-MGMT-KEY": {
-                                "display_name"                         : "rt-fra-lz-hub-mgmt",
+                            "RT-JED-LZ-HUB-MGMT-KEY": {
+                                "display_name"                         : "rt-jed-lz-hub-mgmt",
 
                                 "route_rules": {
                                     "rt-natgw": {
                                         "description"                  : "Route to Internet through NAT GW",
                                         "destination"                  : "0.0.0.0/0",
                                         "destination_type"             : "CIDR_BLOCK",
-                                        "network_entity_key"           : "NGW-FRA-LZ-HUB-KEY"
+                                        "network_entity_key"           : "NGW-JED-LZ-HUB-KEY"
                                     },
 
-                                    "rt-fra-prod-projects": {
+                                    "rt-jed-prod-projects": {
                                         "description"                  : "Route to VCN Prod Projects through DRG",
                                         "destination"                  : "10.0.64.0/21",
                                         "destination_type"             : "CIDR_BLOCK",
-                                        "network_entity_key"           : "DRG-FRA-LZ-HUB-KEY"
+                                        "network_entity_key"           : "DRG-JED-LZ-HUB-KEY"
                                     },
 
 
@@ -108,7 +108,7 @@
                                         "description"                  : "Route to Oracle Services Network through Service GW",
                                         "destination"                  : "all-services",
                                         "destination_type"             : "SERVICE_CIDR_BLOCK",
-                                        "network_entity_key"           : "SGW-FRA-LZ-HUB-KEY"
+                                        "network_entity_key"           : "SGW-JED-LZ-HUB-KEY"
                                     }
                                 }
                             }
@@ -120,8 +120,8 @@
                         },
 
                         "security_lists": {
-                            "SL-FRA-LZ-HUB-LB-KEY": {
-                                "display_name"                         : "sl-fra-lz-hub-lb",
+                            "SL-JED-LZ-HUB-LB-KEY": {
+                                "display_name"                         : "sl-jed-lz-hub-lb",
                                 "egress_rules"                         : [],
 
                                 "ingress_rules": [
@@ -154,8 +154,8 @@
                                 ]
                             },
 
-                            "SL-FRA-LZ-HUB-MGMT-KEY": {
-                                "display_name"                         : "sl-fra-lz-hub-mgmt",
+                            "SL-JED-LZ-HUB-MGMT-KEY": {
+                                "display_name"                         : "sl-jed-lz-hub-mgmt",
 
                                 "ingress_rules": [
                                     {
@@ -208,8 +208,8 @@
                         },
 
                         "network_security_groups": {
-                            "NSG-FRA-LZ-HUB-LB-KEY": {
-                                "display_name"                         : "nsg-fra-lz-hub-lb",
+                            "NSG-JED-LZ-HUB-LB-KEY": {
+                                "display_name"                         : "nsg-jed-lz-hub-lb",
 
                                 "ingress_rules": {
                                     "http_80": {
@@ -247,20 +247,20 @@
 
                         "vcn_specific_gateways": {
                             "internet_gateways": {
-                                "IGW-FRA-LZ-HUB-KEY": {
-                                    "display_name"                     : "igw-fra-lz-hub"
+                                "IGW-JED-LZ-HUB-KEY": {
+                                    "display_name"                     : "igw-jed-lz-hub"
                                 }
                             },
 
                             "nat_gateways": {
-                                "NGW-FRA-LZ-HUB-KEY": {
-                                    "display_name"                     : "ngw-fra-lz-hub"
+                                "NGW-JED-LZ-HUB-KEY": {
+                                    "display_name"                     : "ngw-jed-lz-hub"
                                 }
                             },
 
                             "service_gateways": {
-                                "SGW-FRA-LZ-HUB-KEY": {
-                                    "display_name"                     : "sgw-fra-lz-hub",
+                                "SGW-JED-LZ-HUB-KEY": {
+                                    "display_name"                     : "sgw-jed-lz-hub",
                                     "services"                         : "all-services"
                                 }
                             }
@@ -270,34 +270,34 @@
 
                 "non_vcn_specific_gateways": {
                     "dynamic_routing_gateways": {
-                        "DRG-FRA-LZ-HUB-KEY": {
-                            "display_name"                             : "drg-fra-lz-hub",
+                        "DRG-JED-LZ-HUB-KEY": {
+                            "display_name"                             : "drg-jed-lz-hub",
 
                             "drg_attachments": {
-                                "DRGATT-FRA-LZ-HUB-VCN-KEY": {
-                                    "display_name"                     : "drgatt-fra-lz-hub",
-                                    "drg_route_table_key"              : "DRGRT-FRA-LZ-HUB-KEY",
+                                "DRGATT-JED-LZ-HUB-VCN-KEY": {
+                                    "display_name"                     : "drgatt-jed-lz-hub",
+                                    "drg_route_table_key"              : "DRGRT-JED-LZ-HUB-KEY",
 
                                     "network_details": {
                                         "type"                         : "VCN",
-                                        "attached_resource_key"        : "VCN-FRA-LZ-HUB-KEY"
+                                        "attached_resource_key"        : "VCN-JED-LZ-HUB-KEY"
                                     }
                                 },
 
-                                "DRGATT-FRA-LZ-PROD-PROJ-KEY": {
-                                    "display_name"                     : "drgatt-fra-lz-prod-proj",
-                                    "drg_route_table_key"              : "DRGRT-FRA-LZ-SPOKES-KEY",
+                                "DRGATT-JED-LZ-PROD-PROJ-KEY": {
+                                    "display_name"                     : "drgatt-jed-lz-prod-proj",
+                                    "drg_route_table_key"              : "DRGRT-JED-LZ-SPOKES-KEY",
 
                                     "network_details": {
                                         "type"                         : "VCN",
-                                        "attached_resource_key"        : "VCN-FRA-LZ-PROD-PROJECTS-KEY"
+                                        "attached_resource_key"        : "VCN-JED-LZ-PROD-PROJECTS-KEY"
                                     }
                                 }
                             },
 
                             "drg_route_distributions": {
-                                "DRGRD-FRA-LZ-HUB-KEY": {
-                                    "display_name"                     : "drgrd-fra-lz-hub",
+                                "DRGRD-JED-LZ-HUB-KEY": {
+                                    "display_name"                     : "drgrd-jed-lz-hub",
                                     "distribution_type"                : "IMPORT",
 
                                     "statements": {
@@ -308,14 +308,14 @@
                                             "match_criteria": {
                                                 "match_type"           : "DRG_ATTACHMENT_ID",
                                                 "attachment_type"      : "VCN",
-                                                "drg_attachment_key"   : "DRGATT-FRA-LZ-PROD-PROJ-KEY"
+                                                "drg_attachment_key"   : "DRGATT-JED-LZ-PROD-PROJ-KEY"
                                             }
                                         }
                                     }
                                 },
 
-                                "DRGRD-FRA-LZ-SPOKE-KEY": {
-                                    "display_name"                     : "drgrd-fra-lz-spoke",
+                                "DRGRD-JED-LZ-SPOKE-KEY": {
+                                    "display_name"                     : "drgrd-jed-lz-spoke",
                                     "distribution_type"                : "IMPORT",
 
                                     "statements": {
@@ -326,7 +326,7 @@
                                             "match_criteria": {
                                                 "match_type"           : "DRG_ATTACHMENT_ID",
                                                 "attachment_type"      : "VCN",
-                                                "drg_attachment_key"   : "DRGATT-FRA-LZ-HUB-VCN-KEY"
+                                                "drg_attachment_key"   : "DRGATT-JED-LZ-HUB-VCN-KEY"
                                             }
                                         },
 
@@ -337,7 +337,7 @@
                                             "match_criteria": {
                                                 "match_type"           : "DRG_ATTACHMENT_ID",
                                                 "attachment_type"      : "VCN",
-                                                "drg_attachment_key"   : "DRGATT-FRA-LZ-PROD-PROJ-KEY"
+                                                "drg_attachment_key"   : "DRGATT-JED-LZ-PROD-PROJ-KEY"
                                             }
                                         }
                                     }
@@ -345,16 +345,16 @@
                             },
 
                             "drg_route_tables": {
-                                "DRGRT-FRA-LZ-HUB-KEY": {
-                                    "display_name"                     : "drgrt-fra-lz-hub",
-                                    "import_drg_route_distribution_key": "DRGRD-FRA-LZ-HUB-KEY",
+                                "DRGRT-JED-LZ-HUB-KEY": {
+                                    "display_name"                     : "drgrt-jed-lz-hub",
+                                    "import_drg_route_distribution_key": "DRGRD-JED-LZ-HUB-KEY",
                                     "is_ecmp_enabled"                  : false,
                                     "route_rules"                      : {}
                                 },
 
-                                "DRGRT-FRA-LZ-SPOKES-KEY": {
-                                    "display_name"                     : "drgrt-fra-lz-spokes",
-                                    "import_drg_route_distribution_key": "DRGRD-FRA-LZ-SPOKE-KEY",
+                                "DRGRT-JED-LZ-SPOKES-KEY": {
+                                    "display_name"                     : "drgrt-jed-lz-spokes",
+                                    "import_drg_route_distribution_key": "DRGRD-JED-LZ-SPOKE-KEY",
                                     "is_ecmp_enabled"                  : false,
                                     "route_rules"                      : {}
                                 }
@@ -363,14 +363,14 @@
                     },
 
                     "l7_load_balancers": {
-                        "LB-FRA-LZ-PROD-01-KEY": {
-                            "display_name"                             : "lb-fra-lz-prod-01",
+                        "LB-JED-LZ-PROD-01-KEY": {
+                            "display_name"                             : "lb-jed-lz-prod-01",
                             "ip_mode"                                  : "IPV4",
                             "is_private"                               : false,
-                            "network_security_group_keys"              : ["NSG-FRA-LZ-HUB-LB-KEY"],
+                            "network_security_group_keys"              : ["NSG-JED-LZ-HUB-LB-KEY"],
                             "shape"                                    : "flexible",
                             "subnet_ids"                               : [],
-                            "subnet_keys"                              : ["SN-FRA-LZ-HUB-LB-KEY"],
+                            "subnet_keys"                              : ["SN-JED-LZ-HUB-LB-KEY"],
 
                             "shape_details": {
                                 "maximum_bandwidth_in_mbps"            : 10,
@@ -378,12 +378,12 @@
                             },
 
                             "listeners": {
-                                "LBLSNR-FRA-LZ-PROD-01-KEY": {
-                                    "name"                             : "lblsnr-fra-lz-prod-01",
+                                "LBLSNR-JED-LZ-PROD-01-KEY": {
+                                    "name"                             : "lblsnr-jed-lz-prod-01",
                                     "port"                             : "80",
                                     "protocol"                         : "HTTP",
-                                    "default_backend_set_key"          : "LBBKST-FRA-LZ-PROD-01-KEY",
-                                    "routing_policy_key"               : "LBRT-FRA-LZ-PROD-01-KEY",
+                                    "default_backend_set_key"          : "LBBKST-JED-LZ-PROD-01-KEY",
+                                    "routing_policy_key"               : "LBRT-JED-LZ-PROD-01-KEY",
 
                                     "connection_configuration": {
                                         "idle_timeout_in_seconds"      : 1200
@@ -392,12 +392,12 @@
                             },
 
                             "backend_sets": {
-                                "LBBKST-FRA-LZ-PROD-01-KEY": {
-                                    "name"                             : "lbbkst-fra-lz-prod-01",
+                                "LBBKST-JED-LZ-PROD-01-KEY": {
+                                    "name"                             : "lbbkst-jed-lz-prod-01",
                                     "policy"                           : "ROUND_ROBIN",
 
                                     "backends": {
-                                        "LBBE-FRA-LZ-PROD-01-KEY": {
+                                        "LBBE-JED-LZ-PROD-01-KEY": {
                                             "ip_address"               : "10.0.64.10",
                                             "port"                     : 80
                                         }
@@ -415,12 +415,12 @@
                                     }
                                 },
 
-                                "LBBKST-FRA-LZ-PROD-02-KEY": {
-                                    "name"                             : "lbbkst-fra-lz-prod-02",
+                                "LBBKST-JED-LZ-PROD-02-KEY": {
+                                    "name"                             : "lbbkst-jed-lz-prod-02",
                                     "policy"                           : "ROUND_ROBIN",
 
                                     "backends": {
-                                        "LBBE-FRA-LZ-PROD-02-KEY": {
+                                        "LBBE-JED-LZ-PROD-02-KEY": {
                                             "ip_address"               : "10.0.64.20",
                                             "port"                     : 80
                                         }
@@ -440,8 +440,8 @@
                             },
 
                             "routing_policies": {
-                                "LBRT-FRA-LZ-PROD-01-KEY": {
-                                    "name"                             : "lbrt_fra_lz_prod_01",
+                                "LBRT-JED-LZ-PROD-01-KEY": {
+                                    "name"                             : "lbrt_jed_lz_prod_01",
                                     "condition_language_version"       : "V1",
 
                                     "rules": {
@@ -452,7 +452,7 @@
                                             "actions": {
                                                 "action-1": {
                                                     "name"             : "FORWARD_TO_BACKENDSET",
-                                                    "backend_set_key"  : "LBBKST-FRA-LZ-PROD-01-KEY"
+                                                    "backend_set_key"  : "LBBKST-JED-LZ-PROD-01-KEY"
                                                 }
                                             }
                                         },
@@ -464,7 +464,7 @@
                                             "actions": {
                                                 "action-2": {
                                                     "name"             : "FORWARD_TO_BACKENDSET",
-                                                    "backend_set_key"  : "LBBKST-FRA-LZ-PROD-02-KEY"
+                                                    "backend_set_key"  : "LBBKST-JED-LZ-PROD-02-KEY"
                                                 }
                                             }
                                         }
@@ -480,10 +480,10 @@
                 "category_compartment_id"                              : "CMP-LZ-PROD-NETWORK-KEY",
 
                 "vcns": {
-                    "VCN-FRA-LZ-PROD-PROJECTS-KEY": {
-                        "display_name"                                 : "vcn-fra-lz-prod-projects",
+                    "VCN-JED-LZ-PROD-PROJECTS-KEY": {
+                        "display_name"                                 : "vcn-jed-lz-prod-projects",
                         "cidr_blocks"                                  : ["10.0.64.0/21"],
-                        "dns_label"                                    : "vcnfralzpproj",
+                        "dns_label"                                    : "vcnjedlzpproj",
                         "block_nat_traffic"                            : false,
                         "is_attach_drg"                                : false,
                         "is_create_igw"                                : false,
@@ -491,75 +491,75 @@
                         "is_oracle_gua_allocation_enabled"             : false,
 
                         "subnets": {
-                            "SN-FRA-LZ-PROD-WEB-KEY": {
-                                "display_name"                         : "sn-fra-lz-prod-web",
+                            "SN-JED-LZ-PROD-WEB-KEY": {
+                                "display_name"                         : "sn-jed-lz-prod-web",
                                 "cidr_block"                           : "10.0.64.0/24",
-                                "dns_label"                            : "snfralzpweb",
+                                "dns_label"                            : "snjedlzpweb",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-PROD-PROJ-GENERIC-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-PROD-PROJ-GENERIC-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-PROD-PROJ-GENERIC-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-PROD-PROJ-GENERIC-KEY"]
                             },
 
-                            "SN-FRA-LZ-PROD-APP-KEY": {
-                                "display_name"                         : "sn-fra-lz-prod-app",
+                            "SN-JED-LZ-PROD-APP-KEY": {
+                                "display_name"                         : "sn-jed-lz-prod-app",
                                 "cidr_block"                           : "10.0.65.0/24",
-                                "dns_label"                            : "snfralzpapp",
+                                "dns_label"                            : "snjedlzpapp",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-PROD-PROJ-GENERIC-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-PROD-PROJ-GENERIC-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-PROD-PROJ-GENERIC-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-PROD-PROJ-GENERIC-KEY"]
                             },
 
-                            "SN-FRA-LZ-PROD-DB-KEY": {
-                                "display_name"                         : "sn-fra-lz-prod-db",
+                            "SN-JED-LZ-PROD-DB-KEY": {
+                                "display_name"                         : "sn-jed-lz-prod-db",
                                 "cidr_block"                           : "10.0.66.0/24",
-                                "dns_label"                            : "snfralzpdb",
+                                "dns_label"                            : "snjedlzpdb",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-PROD-PROJ-GENERIC-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-PROD-PROJ-GENERIC-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-PROD-PROJ-GENERIC-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-PROD-PROJ-GENERIC-KEY"]
                             },
 
-                            "SN-FRA-LZ-PROD-INFRA-KEY": {
-                                "display_name"                         : "sn-fra-lz-prod-infra",
+                            "SN-JED-LZ-PROD-INFRA-KEY": {
+                                "display_name"                         : "sn-jed-lz-prod-infra",
                                 "cidr_block"                           : "10.0.67.0/24",
-                                "dns_label"                            : "snfralzpinfra",
+                                "dns_label"                            : "snjedlzpinfra",
                                 "dhcp_options_key"                     : "default_dhcp_options",
                                 "prohibit_internet_ingress"            : true,
                                 "prohibit_public_ip_on_vnic"           : true,
-                                "route_table_key"                      : "RT-FRA-LZ-PROD-PROJ-GENERIC-KEY",
-                                "security_list_keys"                   : ["SL-FRA-LZ-PROD-PROJ-GENERIC-KEY"]
+                                "route_table_key"                      : "RT-JED-LZ-PROD-PROJ-GENERIC-KEY",
+                                "security_list_keys"                   : ["SL-JED-LZ-PROD-PROJ-GENERIC-KEY"]
                             }
                         },
 
                         "route_tables": {
-                            "RT-FRA-LZ-PROD-PROJ-GENERIC-KEY": {
-                                "display_name"                         : "rt-fra-lz-prod-proj-generic",
+                            "RT-JED-LZ-PROD-PROJ-GENERIC-KEY": {
+                                "display_name"                         : "rt-jed-lz-prod-proj-generic",
 
                                 "route_rules": {
                                     "rt-natgw": {
                                         "description"                  : "Route to the Internet through NAT GW",
                                         "destination"                  : "0.0.0.0/0",
                                         "destination_type"             : "CIDR_BLOCK",
-                                        "network_entity_key"           : "NGW-FRA-LZ-PROD-PROJ-KEY"
+                                        "network_entity_key"           : "NGW-JED-LZ-PROD-PROJ-KEY"
                                     },
 
-                                    "rt-fra-lz-hub": {
+                                    "rt-jed-lz-hub": {
                                         "description"                  : "Route to the Hub VCN through DRG",
                                         "destination"                  : "10.0.0.0/21",
                                         "destination_type"             : "CIDR_BLOCK",
-                                        "network_entity_key"           : "DRG-FRA-LZ-HUB-KEY"
+                                        "network_entity_key"           : "DRG-JED-LZ-HUB-KEY"
                                     },
 
                                     "sgw_route": {
                                         "description"                  : "Route to Oracle Services Network through Service GW",
                                         "destination"                  : "all-services",
                                         "destination_type"             : "SERVICE_CIDR_BLOCK",
-                                        "network_entity_key"           : "SGW-FRA-LZ-PROD-PROJ-KEY"
+                                        "network_entity_key"           : "SGW-JED-LZ-PROD-PROJ-KEY"
                                     }
                                 }
                             }
@@ -571,8 +571,8 @@
                         },
 
                         "security_lists": {
-                            "SL-FRA-LZ-PROD-PROJ-GENERIC-KEY": {
-                                "display_name"                         : "sl-fra-lz-prod-proj-generic",
+                            "SL-JED-LZ-PROD-PROJ-GENERIC-KEY": {
+                                "display_name"                         : "sl-jed-lz-prod-proj-generic",
 
                                 "ingress_rules": [
                                     {
@@ -623,14 +623,14 @@
                         },
 
                         "network_security_groups": {
-                            "NSG-FRA-LZ-PROD-PROJ1-APP-KEY": {
-                                "display_name"                         : "nsg-fra-lz-prod-proj1-app",
+                            "NSG-JED-LZ-PROD-PROJ1-APP-KEY": {
+                                "display_name"                         : "nsg-jed-lz-prod-proj1-app",
                                 "compartment_id"                       : "CMP-LZ-PROD-PROJ1-KEY",
 
                                 "ingress_rules": {
                                     "http_80": {
-                                        "description"                  : "Allow inbound from NSG nsg-fra-lz-prod-proj1-web over HTTP",
-                                        "src"                          : "NSG-FRA-LZ-PROD-PROJ1-WEB-KEY",
+                                        "description"                  : "Allow inbound from NSG nsg-jed-lz-prod-proj1-web over HTTP",
+                                        "src"                          : "NSG-JED-LZ-PROD-PROJ1-WEB-KEY",
                                         "src_type"                     : "NETWORK_SECURITY_GROUP",
                                         "dst_port_min"                 : 80,
                                         "dst_port_max"                 : 80,
@@ -639,8 +639,8 @@
                                     },
 
                                     "https_443": {
-                                        "description"                  : "Allow inbound from NSG nsg-fra-lz-prod-proj1-web over HTTPS",
-                                        "src"                          : "NSG-FRA-LZ-PROD-PROJ1-WEB-KEY",
+                                        "description"                  : "Allow inbound from NSG nsg-jed-lz-prod-proj1-web over HTTPS",
+                                        "src"                          : "NSG-JED-LZ-PROD-PROJ1-WEB-KEY",
                                         "src_type"                     : "NETWORK_SECURITY_GROUP",
                                         "dst_port_min"                 : 443,
                                         "dst_port_max"                 : 443,
@@ -670,14 +670,14 @@
                                 }
                             },
 
-                            "NSG-FRA-LZ-PROD-PROJ1-DB-KEY": {
-                                "display_name"                         : "nsg-fra-lz-prod-proj1-db",
+                            "NSG-JED-LZ-PROD-PROJ1-DB-KEY": {
+                                "display_name"                         : "nsg-jed-lz-prod-proj1-db",
                                 "compartment_id"                       : "CMP-LZ-PROD-PROJ1-KEY",
 
                                 "ingress_rules": {
                                     "db_1521": {
-                                        "description"                  : "Allow inbound from NSG nsg-fra-lz-prod-proj1-app over TCP 1521",
-                                        "src"                          : "NSG-FRA-LZ-PROD-PROJ1-APP-KEY",
+                                        "description"                  : "Allow inbound from NSG nsg-jed-lz-prod-proj1-app over TCP 1521",
+                                        "src"                          : "NSG-JED-LZ-PROD-PROJ1-APP-KEY",
                                         "src_type"                     : "NETWORK_SECURITY_GROUP",
                                         "dst_port_min"                 : 1521,
                                         "dst_port_max"                 : 1521,
@@ -697,8 +697,8 @@
                                 }
                             },
 
-                            "NSG-FRA-LZ-PROD-PROJ1-WEB-KEY": {
-                                "display_name"                         : "nsg-fra-lz-prod-proj1-web",
+                            "NSG-JED-LZ-PROD-PROJ1-WEB-KEY": {
+                                "display_name"                         : "nsg-jed-lz-prod-proj1-web",
                                 "compartment_id"                       : "CMP-LZ-PROD-PROJ1-KEY",
 
                                 "ingress_rules": {
@@ -747,14 +747,14 @@
 
                         "vcn_specific_gateways": {
                             "nat_gateways": {
-                                "NGW-FRA-LZ-PROD-PROJ-KEY": {
-                                    "display_name"                     : "ngw-fra-lz-prod-proj"
+                                "NGW-JED-LZ-PROD-PROJ-KEY": {
+                                    "display_name"                     : "ngw-jed-lz-prod-proj"
                                 }
                             },
 
                             "service_gateways": {
-                                "SGW-FRA-LZ-PROD-PROJ-KEY": {
-                                    "display_name"                     : "sgw-fra-lz-prod-proj",
+                                "SGW-JED-LZ-PROD-PROJ-KEY": {
+                                    "display_name"                     : "sgw-jed-lz-prod-proj",
                                     "services"                         : "all-services"
                                 }
                             }
