@@ -171,6 +171,16 @@
             "GRP-LZ-PROD-OIC-ADMIN-KEY": {
                 "name"                                         : "grp-lz-prod-oic-admin",
                 "description"                                  : "One-OE Landing Zone, Production Environment, OIC/OPA/VBCS Administrators group."
+            },
+
+            "GRP-LZ-PREPROD-DB-ADMIN-KEY": {
+                "name"                                         : "grp-lz-preprod-db-admin",
+                "description"                                  : "One-OE Landing Zone, Pre-Production Environment, Database Administrators group."
+            },
+
+            "GRP-LZ-PROD-DB-ADMIN-KEY": {
+                "name"                                         : "grp-lz-prod-db-admin",
+                "description"                                  : "One-OE Landing Zone, Production Environment, Database Administrators group."
             }
         }
     },
@@ -618,6 +628,82 @@
                     "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read keys in compartment cmp-lz-prod-security",
                     "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use key-delegate in compartment cmp-lz-prod-security",
                     "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read logging-family in compartment cmp-lz-prod-security"
+                ]
+            },
+
+            "PCY-LZ-PREPROD-DB-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-preprod-db-admin",
+                "description"                                  : "Allow grp-lz-preprod-db-admin group users to manage database resources only in pre-production compartments.",
+                "compartment_id"                               : "CMP-LZ-PREPROD-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to manage autonomous-database-family in compartment cmp-lz-preprod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to read metrics in compartment cmp-lz-preprod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to read alarms in compartment cmp-lz-preprod-platform"
+                ]
+            },
+
+            "PCY-LZ-PREPROD-DB-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-preprod-db-admin-net",
+                "description"                                  : "Allow grp-lz-preprod-db-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-PREPROD-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to use virtual-network-family in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to use subnets in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to use network-security-groups in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to use vnics in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to manage private-ips in compartment cmp-lz-preprod-network"
+                ]
+            },
+
+            "PCY-LZ-PREPROD-DB-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-preprod-db-admin-sec",
+                "description"                                  : "Allow grp-lz-preprod-db-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-PREPROD-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to use vaults in compartment cmp-lz-preprod-security",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to read keys in compartment cmp-lz-preprod-security",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-db-admin' to use key-delegate in compartment cmp-lz-preprod-security"
+                ]
+            },
+
+            "PCY-LZ-PROD-DB-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-prod-db-admin",
+                "description"                                  : "Allow grp-lz-prod-db-admin group users to manage database resources only in production compartments.",
+                "compartment_id"                               : "CMP-LZ-PROD-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to manage autonomous-database-family in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read metrics in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read alarms in compartment cmp-lz-prod-platform"
+                ]
+            },
+
+            "PCY-LZ-PROD-DB-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-prod-db-admin-net",
+                "description"                                  : "Allow grp-lz-prod-db-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use virtual-network-family in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use subnets in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use network-security-groups in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use vnics in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to manage private-ips in compartment cmp-lz-prod-network"
+                ]
+            },
+
+            "PCY-LZ-PROD-DB-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-prod-db-admin-sec",
+                "description"                                  : "Allow grp-lz-prod-db-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use vaults in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read keys in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use key-delegate in compartment cmp-lz-prod-security"
                 ]
             }
         }
