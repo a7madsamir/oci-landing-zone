@@ -161,6 +161,16 @@
             "GRP-SECURITY-ADMIN-KEY": {
                 "name"                                         : "grp-security-admin",
                 "description"                                  : "Tenancy Security Administrators for global resources as Cloud Guard."
+            },
+
+            "GRP-LZ-PREPROD-OIC-ADMIN-KEY": {
+                "name"                                         : "grp-lz-preprod-oic-admin",
+                "description"                                  : "One-OE Landing Zone, Pre-Production Environment, OIC/OPA/VBCS Administrators group."
+            },
+
+            "GRP-LZ-PROD-OIC-ADMIN-KEY": {
+                "name"                                         : "grp-lz-prod-oic-admin",
+                "description"                                  : "One-OE Landing Zone, Production Environment, OIC/OPA/VBCS Administrators group."
             }
         }
     },
@@ -249,7 +259,8 @@
                     "allow group 'id_lz_common'/'grp-iam-admin', 'id_lz_common'/'grp-auditors-admin', 'id_lz_common'/'grp-security-admin', 'id_lz_common'/'grp-lz-network-admin' to read usage-budgets in tenancy",
                     "allow group 'id_lz_common'/'grp-iam-admin', 'id_lz_common'/'grp-auditors-admin', 'id_lz_common'/'grp-security-admin', 'id_lz_common'/'grp-lz-network-admin' to read usage-reports in tenancy",
                     "allow group 'id_lz_common'/'grp-iam-admin', 'id_lz_common'/'grp-auditors-admin', 'id_lz_common'/'grp-security-admin', 'id_lz_common'/'grp-lz-network-admin' to read objectstorage-namespaces in tenancy",
-                    "allow any-user to inspect tag-namespaces in tenancy where target.tag-namespace.name='tagns-lz-role'"
+                    "allow any-user to inspect tag-namespaces in tenancy where target.tag-namespace.name='tagns-lz-role'",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin', 'id_lz_common'/'grp-lz-prod-oic-admin' to use tag-namespaces in tenancy"
                 ]
             },
 
@@ -527,6 +538,86 @@
                     "allow service vulnerability-scanning-service to read vnics in tenancy",
                     "allow service vulnerability-scanning-service to read vnic-attachments in tenancy",
                     "allow service blockstorage, oke, streaming, Fssoc1Prod, objectstorage-me-jeddah-1 to use keys in tenancy"
+                ]
+            },
+
+            "PCY-LZ-PREPROD-OIC-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-preprod-oic-admin",
+                "description"                                  : "Allow grp-lz-preprod-oic-admin group users to manage OIC/OPA/VBCS resources only in preprod integration/application compartments.",
+                "compartment_id"                               : "CMP-LZ-PREPROD-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage integration-instance in compartment cmp-lz-preprod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to read metrics in compartment cmp-lz-preprod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage process-automation-instances in compartment cmp-lz-preprod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-preprod-platform"
+                ]
+            },
+
+            "PCY-LZ-PREPROD-OIC-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-preprod-oic-admin-net",
+                "description"                                  : "Allow grp-lz-preprod-oic-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-PREPROD-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to use virtual-network-family in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to use subnets in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to use network-security-groups in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to use vnics in compartment cmp-lz-preprod-network",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage private-ips in compartment cmp-lz-preprod-network"
+                ]
+            },
+
+            "PCY-LZ-PREPROD-OIC-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-preprod-oic-admin-sec",
+                "description"                                  : "Allow grp-lz-preprod-oic-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-PREPROD-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to use vaults in compartment cmp-lz-preprod-security",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to read keys in compartment cmp-lz-preprod-security",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to use key-delegate in compartment cmp-lz-preprod-security",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to read logging-family in compartment cmp-lz-preprod-security"
+                ]
+            },
+
+            "PCY-LZ-PROD-OIC-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-prod-oic-admin",
+                "description"                                  : "Allow grp-lz-prod-oic-admin group users to manage OIC/OPA/VBCS resources only in prod integration/application compartments.",
+                "compartment_id"                               : "CMP-LZ-PROD-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage integration-instance in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read metrics in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage process-automation-instances in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-prod-platform"
+                ]
+            },
+
+            "PCY-LZ-PROD-OIC-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-prod-oic-admin-net",
+                "description"                                  : "Allow grp-lz-prod-oic-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use virtual-network-family in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use subnets in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use network-security-groups in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use vnics in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage private-ips in compartment cmp-lz-prod-network"
+                ]
+            },
+
+            "PCY-LZ-PROD-OIC-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-prod-oic-admin-sec",
+                "description"                                  : "Allow grp-lz-prod-oic-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use vaults in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read keys in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use key-delegate in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read logging-family in compartment cmp-lz-prod-security"
                 ]
             }
         }
