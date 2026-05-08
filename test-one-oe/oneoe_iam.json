@@ -560,7 +560,8 @@
                     "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage integration-instance in compartment cmp-lz-preprod-platform",
                     "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to read metrics in compartment cmp-lz-preprod-platform",
                     "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage process-automation-instances in compartment cmp-lz-preprod-platform",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-preprod-platform"
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-preprod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-preprod-oic-admin' to manage api-gateway-family in compartment cmp-lz-preprod-platform"
                 ]
             },
 
@@ -600,7 +601,8 @@
                     "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage integration-instance in compartment cmp-lz-prod-platform",
                     "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read metrics in compartment cmp-lz-prod-platform",
                     "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage process-automation-instances in compartment cmp-lz-prod-platform",
-                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-prod-platform"
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage api-gateway-family in compartment cmp-lz-prod-platform"
                 ]
             },
 
