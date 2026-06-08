@@ -22,40 +22,82 @@
                         "description"                          : "Shared Platform Compartment"
                     },
 
-                    "CMP-LZ-PREPROD-KEY": {
-                        "name"                                 : "cmp-lz-preprod",
-                        "description"                          : "Pre-Production Environment Compartment",
+                    "CMP-LZ-TEST-KEY": {
+                        "name"                                 : "cmp-lz-test",
+                        "description"                          : "Test Environment Compartment",
 
                         "children": {
-                            "CMP-LZ-PREPROD-NETWORK-KEY": {
-                                "name"                         : "cmp-lz-preprod-network",
-                                "description"                  : "Pre-Production Workload Environment, Common Network Compartment",
+                            "CMP-LZ-TEST-NETWORK-KEY": {
+                                "name"                         : "cmp-lz-test-network",
+                                "description"                  : "Test Workload Environment, Common Network Compartment",
 
                                 "defined_tags": {
                                     "tagns-lz-role.tag-lz-role": "lz-network-admin"
                                 }
                             },
 
-                            "CMP-LZ-PREPROD-PLATFORM-KEY": {
-                                "name"                         : "cmp-lz-preprod-platform",
-                                "description"                  : "Pre-Production Workload Environment, Common Platform Compartment"
+                            "CMP-LZ-TEST-PLATFORM-KEY": {
+                                "name"                         : "cmp-lz-test-platform",
+                                "description"                  : "Test Workload Environment, Common Platform Compartment"
                             },
 
-                            "CMP-LZ-PREPROD-PROJECTS-KEY": {
-                                "name"                         : "cmp-lz-preprod-projects",
-                                "description"                  : "One-OE Pre-Production Workload Environment, Common Projects Compartment",
+                            "CMP-LZ-TEST-PROJECTS-KEY": {
+                                "name"                         : "cmp-lz-test-projects",
+                                "description"                  : "One-OE Test Workload Environment, Common Projects Compartment",
 
                                 "children": {
-                                    "CMP-LZ-PREPROD-PROJ1-KEY": {
-                                        "name"                 : "cmp-lz-preprod-proj1",
-                                        "description"          : "Pre-Production environment, Project 1 compartment"
+                                    "CMP-LZ-TEST-PROJ1-KEY": {
+                                        "name"                 : "cmp-lz-test-proj1",
+                                        "description"          : "Test environment, Project 1 compartment"
                                     }
                                 }
                             },
 
-                            "CMP-LZ-PREPROD-SECURITY-KEY": {
-                                "name"                         : "cmp-lz-preprod-security",
-                                "description"                  : "Pre-Production Workload Environment, Common Security Compartment",
+                            "CMP-LZ-TEST-SECURITY-KEY": {
+                                "name"                         : "cmp-lz-test-security",
+                                "description"                  : "Test Workload Environment, Common Security Compartment",
+
+                                "defined_tags": {
+                                    "tagns-lz-role.tag-lz-role": "lz-security-admin"
+                                }
+                            }
+                        }
+                    },
+
+                    "CMP-LZ-DEV-KEY": {
+                        "name"                                 : "cmp-lz-dev",
+                        "description"                          : "Development Environment Compartment",
+
+                        "children": {
+                            "CMP-LZ-DEV-NETWORK-KEY": {
+                                "name"                         : "cmp-lz-dev-network",
+                                "description"                  : "Development Workload Environment, Common Network Compartment",
+
+                                "defined_tags": {
+                                    "tagns-lz-role.tag-lz-role": "lz-network-admin"
+                                }
+                            },
+
+                            "CMP-LZ-DEV-PLATFORM-KEY": {
+                                "name"                         : "cmp-lz-dev-platform",
+                                "description"                  : "Development Workload Environment, Common Platform Compartment"
+                            },
+
+                            "CMP-LZ-DEV-PROJECTS-KEY": {
+                                "name"                         : "cmp-lz-dev-projects",
+                                "description"                  : "Development Workload Environment, Common Projects Compartment",
+
+                                "children": {
+                                    "CMP-LZ-DEV-PROJ1-KEY": {
+                                        "name"                 : "cmp-lz-dev-proj1",
+                                        "description"          : "Development environment, Project 1 compartment"
+                                    }
+                                }
+                            },
+
+                            "CMP-LZ-DEV-SECURITY-KEY": {
+                                "name"                         : "cmp-lz-dev-security",
+                                "description"                  : "Development Workload Environment, Common Security Compartment",
 
                                 "defined_tags": {
                                     "tagns-lz-role.tag-lz-role": "lz-security-admin"
@@ -143,9 +185,14 @@
                 "description"                                  : "One-OE Landing Zone, Shared network administration group, including common OE network elements."
             },
 
-            "GRP-LZ-PREPROD-PROJ1-ADMIN-KEY": {
-                "name"                                         : "grp-lz-preprod-proj1-admin",
-                "description"                                  : "One-OE Landing Zone, Pre-Production environment, Project 1, Administrators."
+            "GRP-LZ-TEST-PROJ1-ADMIN-KEY": {
+                "name"                                         : "grp-lz-test-proj1-admin",
+                "description"                                  : "One-OE Landing Zone, Test environment, Project 1, Administrators."
+            },
+
+            "GRP-LZ-DEV-PROJ1-ADMIN-KEY": {
+                "name"                                         : "grp-lz-dev-proj1-admin",
+                "description"                                  : "One-OE Landing Zone, Development environment, Project 1, Administrators."
             },
 
             "GRP-LZ-PROD-PROJ1-ADMIN-KEY": {
@@ -312,71 +359,139 @@
                 ]
             },
 
-            "PCY-LZ-PREPROD-PROJ1-ADMIN-KEY": {
-                "name"                                         : "pcy-lz-preprod-proj1-admin",
-                "description"                                  : "Allow grp-lz-preprod-proj1-admin group to manage their dedicated project 1 compartment",
-                "compartment_id"                               : "CMP-LZ-PREPROD-PROJ1-KEY",
+            "PCY-LZ-TEST-PROJ1-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-test-proj1-admin",
+                "description"                                  : "Allow grp-lz-test-proj1-admin group to manage their dedicated project 1 compartment",
+                "compartment_id"                               : "CMP-LZ-TEST-PROJ1-KEY",
 
                 "statements": [
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read all-resources in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read bucket in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to inspect object in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read audit-events in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read work-requests in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read instance-agent-plugins in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use network-security-groups in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use load-balancers in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use vnics in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use key-delegate in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage api-gateway-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage streams in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage cluster-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage alarms in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage metrics in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage logging-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage instance-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage volume-family in compartment cmp-lz-preprod-proj1 where all{request.permission != 'VOLUME_BACKUP_DELETE', request.permission != 'VOLUME_DELETE', request.permission != 'BOOT_VOLUME_BACKUP_DELETE'}",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage object-family in compartment cmp-lz-preprod-proj1 where all{request.permission != 'OBJECT_DELETE', request.permission != 'BUCKET_DELETE'}",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage file-family in compartment cmp-lz-preprod-proj1 where all{request.permission != 'FILE_SYSTEM_DELETE', request.permission != 'MOUNT_TARGET_DELETE', request.permission != 'EXPORT_SET_DELETE', request.permission != 'FILE_SYSTEM_DELETE_SNAPSHOT', request.permission != 'FILE_SYSTEM_NFSv3_UNEXPORT'}",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage repos in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage orm-stacks in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage orm-jobs in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage orm-config-source-providers in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage bastion-session in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage cloudevents-rules in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage keys in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage secret-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage database-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage autonomous-database-family in compartment cmp-lz-preprod-proj1",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage data-safe-family in compartment cmp-lz-preprod-proj1"
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read all-resources in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read bucket in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to inspect object in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read audit-events in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read work-requests in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read instance-agent-plugins in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use network-security-groups in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use load-balancers in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use vnics in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use key-delegate in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage api-gateway-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage streams in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage cluster-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage alarms in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage metrics in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage logging-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage instance-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage volume-family in compartment cmp-lz-test-proj1 where all{request.permission != 'VOLUME_BACKUP_DELETE', request.permission != 'VOLUME_DELETE', request.permission != 'BOOT_VOLUME_BACKUP_DELETE'}",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage object-family in compartment cmp-lz-test-proj1 where all{request.permission != 'OBJECT_DELETE', request.permission != 'BUCKET_DELETE'}",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage file-family in compartment cmp-lz-test-proj1 where all{request.permission != 'FILE_SYSTEM_DELETE', request.permission != 'MOUNT_TARGET_DELETE', request.permission != 'EXPORT_SET_DELETE', request.permission != 'FILE_SYSTEM_DELETE_SNAPSHOT', request.permission != 'FILE_SYSTEM_NFSv3_UNEXPORT'}",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage repos in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage orm-stacks in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage orm-jobs in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage orm-config-source-providers in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage bastion-session in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage cloudevents-rules in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage keys in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage secret-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage database-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage autonomous-database-family in compartment cmp-lz-test-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage data-safe-family in compartment cmp-lz-test-proj1"
                 ]
             },
 
-            "PCY-LZ-PREPROD-PROJ1-ADMIN-NET-KEY": {
-                "name"                                         : "pcy-lz-preprod-proj1-admin-net",
-                "description"                                  : "Allow grp-lz-preprod-proj1-admin group to use shared network resources",
-                "compartment_id"                               : "CMP-LZ-PREPROD-NETWORK-KEY",
+            "PCY-LZ-TEST-PROJ1-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-test-proj1-admin-net",
+                "description"                                  : "Allow grp-lz-test-proj1-admin group to use shared network resources",
+                "compartment_id"                               : "CMP-LZ-TEST-NETWORK-KEY",
 
                 "statements": [
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use virtual-network-family in compartment cmp-lz-preprod-network",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use subnets in compartment cmp-lz-preprod-network",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use vnics in compartment cmp-lz-preprod-network",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage private-ips in compartment cmp-lz-preprod-network"
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use virtual-network-family in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use subnets in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use vnics in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage private-ips in compartment cmp-lz-test-network"
                 ]
             },
 
-            "PCY-LZ-PREPROD-PROJ1-ADMIN-SEC-KEY": {
-                "name"                                         : "pcy-lz-preprod-proj1-admin-sec",
-                "description"                                  : "Allow grp-lz-preprod-proj1-admin group to use shared security resources",
-                "compartment_id"                               : "CMP-LZ-PREPROD-SECURITY-KEY",
+            "PCY-LZ-TEST-PROJ1-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-test-proj1-admin-sec",
+                "description"                                  : "Allow grp-lz-test-proj1-admin group to use shared security resources",
+                "compartment_id"                               : "CMP-LZ-TEST-SECURITY-KEY",
 
                 "statements": [
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read ons-topics in compartment cmp-lz-preprod-security",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use vaults in compartment cmp-lz-preprod-security",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to manage instance-images in compartment cmp-lz-preprod-security",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use vss-family in compartment cmp-lz-preprod-security",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to use bastion in compartment cmp-lz-preprod-security",
-                    "allow group 'id_lz_common'/'grp-lz-preprod-proj1-admin' to read logging-family in compartment cmp-lz-preprod-security"
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read ons-topics in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use vaults in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to manage instance-images in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use vss-family in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to use bastion in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-proj1-admin' to read logging-family in compartment cmp-lz-test-security"
+                ]
+            },
+
+            "PCY-LZ-DEV-PROJ1-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-dev-proj1-admin",
+                "description"                                  : "Allow grp-lz-dev-proj1-admin group to manage their dedicated project 1 compartment",
+                "compartment_id"                               : "CMP-LZ-DEV-PROJ1-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read all-resources in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read bucket in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to inspect object in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read audit-events in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read work-requests in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read instance-agent-plugins in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use network-security-groups in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use load-balancers in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use vnics in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use key-delegate in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage api-gateway-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage streams in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage cluster-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage alarms in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage metrics in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage logging-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage instance-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage volume-family in compartment cmp-lz-dev-proj1 where all{request.permission != 'VOLUME_BACKUP_DELETE', request.permission != 'VOLUME_DELETE', request.permission != 'BOOT_VOLUME_BACKUP_DELETE'}",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage object-family in compartment cmp-lz-dev-proj1 where all{request.permission != 'OBJECT_DELETE', request.permission != 'BUCKET_DELETE'}",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage file-family in compartment cmp-lz-dev-proj1 where all{request.permission != 'FILE_SYSTEM_DELETE', request.permission != 'MOUNT_TARGET_DELETE', request.permission != 'EXPORT_SET_DELETE', request.permission != 'FILE_SYSTEM_DELETE_SNAPSHOT', request.permission != 'FILE_SYSTEM_NFSv3_UNEXPORT'}",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage repos in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage orm-stacks in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage orm-jobs in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage orm-config-source-providers in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage bastion-session in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage cloudevents-rules in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage keys in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage secret-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage database-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage autonomous-database-family in compartment cmp-lz-dev-proj1",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage data-safe-family in compartment cmp-lz-dev-proj1"
+                ]
+            },
+
+            "PCY-LZ-DEV-PROJ1-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-dev-proj1-admin-net",
+                "description"                                  : "Allow grp-lz-dev-proj1-admin group to use shared network resources",
+                "compartment_id"                               : "CMP-LZ-DEV-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use virtual-network-family in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use subnets in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use vnics in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage private-ips in compartment cmp-lz-dev-network"
+                ]
+            },
+
+            "PCY-LZ-DEV-PROJ1-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-dev-proj1-admin-sec",
+                "description"                                  : "Allow grp-lz-dev-proj1-admin group to use shared security resources",
+                "compartment_id"                               : "CMP-LZ-DEV-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read ons-topics in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use vaults in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to manage instance-images in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use vss-family in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to use bastion in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-proj1-admin' to read logging-family in compartment cmp-lz-dev-security"
                 ]
             },
 
