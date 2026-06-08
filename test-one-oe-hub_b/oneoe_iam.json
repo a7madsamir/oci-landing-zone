@@ -208,6 +208,36 @@
             "GRP-SECURITY-ADMIN-KEY": {
                 "name"                                         : "grp-security-admin",
                 "description"                                  : "Tenancy Security Administrators for global resources as Cloud Guard."
+            },
+
+            "GRP-LZ-TEST-OIC-ADMIN-KEY": {
+                "name"                                         : "grp-lz-test-oic-admin",
+                "description"                                  : "One-OE Landing Zone, Test Environment, OIC/OPA/VBCS Administrators group."
+            },
+
+            "GRP-LZ-DEV-OIC-ADMIN-KEY": {
+                "name"                                         : "grp-lz-dev-oic-admin",
+                "description"                                  : "One-OE Landing Zone, Development Environment, OIC/OPA/VBCS Administrators group."
+            },
+
+            "GRP-LZ-PROD-OIC-ADMIN-KEY": {
+                "name"                                         : "grp-lz-prod-oic-admin",
+                "description"                                  : "One-OE Landing Zone, Production Environment, OIC/OPA/VBCS Administrators group."
+            },
+
+            "GRP-LZ-TEST-DB-ADMIN-KEY": {
+                "name"                                         : "grp-lz-test-db-admin",
+                "description"                                  : "One-OE Landing Zone, Test Environment, Database Administrators group."
+            },
+
+            "GRP-LZ-DEV-DB-ADMIN-KEY": {
+                "name"                                         : "grp-lz-dev-db-admin",
+                "description"                                  : "One-OE Landing Zone, Development Environment, Database Administrators group."
+            },
+
+            "GRP-LZ-PROD-DB-ADMIN-KEY": {
+                "name"                                         : "grp-lz-prod-db-admin",
+                "description"                                  : "One-OE Landing Zone, Production Environment, Database Administrators group."
             }
         }
     },
@@ -296,7 +326,8 @@
                     "allow group 'id_lz_common'/'grp-iam-admin', 'id_lz_common'/'grp-auditors-admin', 'id_lz_common'/'grp-security-admin', 'id_lz_common'/'grp-lz-network-admin' to read usage-budgets in tenancy",
                     "allow group 'id_lz_common'/'grp-iam-admin', 'id_lz_common'/'grp-auditors-admin', 'id_lz_common'/'grp-security-admin', 'id_lz_common'/'grp-lz-network-admin' to read usage-reports in tenancy",
                     "allow group 'id_lz_common'/'grp-iam-admin', 'id_lz_common'/'grp-auditors-admin', 'id_lz_common'/'grp-security-admin', 'id_lz_common'/'grp-lz-network-admin' to read objectstorage-namespaces in tenancy",
-                    "allow any-user to inspect tag-namespaces in tenancy where target.tag-namespace.name='tagns-lz-role'"
+                    "allow any-user to inspect tag-namespaces in tenancy where target.tag-namespace.name='tagns-lz-role'",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin', 'id_lz_common'/'grp-lz-dev-oic-admin', 'id_lz_common'/'grp-lz-prod-oic-admin' to use tag-namespaces in tenancy"
                 ]
             },
 
@@ -641,8 +672,244 @@
                     "allow service vulnerability-scanning-service to read repos in tenancy",
                     "allow service vulnerability-scanning-service to read vnics in tenancy",
                     "allow service vulnerability-scanning-service to read vnic-attachments in tenancy",
-                    "allow service osms to read instances in tenancy",
                     "allow service blockstorage, oke, streaming, Fssoc1Prod, objectstorage-eu-frankfurt-1 to use keys in tenancy"
+                ]
+            },
+
+            "PCY-LZ-TEST-OIC-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-test-oic-admin",
+                "description"                                  : "Allow grp-lz-test-oic-admin group users to manage OIC/OPA/VBCS resources only in test integration/application compartments.",
+                "compartment_id"                               : "CMP-LZ-TEST-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to manage integration-instance in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to read metrics in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to manage process-automation-instances in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to manage api-gateway-family in compartment cmp-lz-test-platform"
+                ]
+            },
+
+            "PCY-LZ-TEST-OIC-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-test-oic-admin-net",
+                "description"                                  : "Allow grp-lz-test-oic-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-TEST-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to use virtual-network-family in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to use subnets in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to use network-security-groups in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to use vnics in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to manage private-ips in compartment cmp-lz-test-network"
+                ]
+            },
+
+            "PCY-LZ-TEST-OIC-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-test-oic-admin-sec",
+                "description"                                  : "Allow grp-lz-test-oic-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-TEST-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to use vaults in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to read keys in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to use key-delegate in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-oic-admin' to read logging-family in compartment cmp-lz-test-security"
+                ]
+            },
+
+            "PCY-LZ-DEV-OIC-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-dev-oic-admin",
+                "description"                                  : "Allow grp-lz-dev-oic-admin group users to manage OIC/OPA/VBCS resources only in dev integration/application compartments.",
+                "compartment_id"                               : "CMP-LZ-DEV-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to manage integration-instance in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to read metrics in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to manage process-automation-instances in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to manage api-gateway-family in compartment cmp-lz-dev-platform"
+                ]
+            },
+
+            "PCY-LZ-DEV-OIC-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-dev-oic-admin-net",
+                "description"                                  : "Allow grp-lz-dev-oic-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-DEV-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to use virtual-network-family in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to use subnets in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to use network-security-groups in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to use vnics in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to manage private-ips in compartment cmp-lz-dev-network"
+                ]
+            },
+
+            "PCY-LZ-DEV-OIC-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-dev-oic-admin-sec",
+                "description"                                  : "Allow grp-lz-dev-oic-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-DEV-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to use vaults in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to read keys in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to use key-delegate in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-oic-admin' to read logging-family in compartment cmp-lz-dev-security"
+                ]
+            },
+
+            "PCY-LZ-PROD-OIC-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-prod-oic-admin",
+                "description"                                  : "Allow grp-lz-prod-oic-admin group users to manage OIC/OPA/VBCS resources only in prod integration/application compartments.",
+                "compartment_id"                               : "CMP-LZ-PROD-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage integration-instance in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read metrics in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage process-automation-instances in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage visualbuilder-instance in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage api-gateway-family in compartment cmp-lz-prod-platform"
+                ]
+            },
+
+            "PCY-LZ-PROD-OIC-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-prod-oic-admin-net",
+                "description"                                  : "Allow grp-lz-prod-oic-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use virtual-network-family in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use subnets in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use network-security-groups in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use vnics in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to manage private-ips in compartment cmp-lz-prod-network"
+                ]
+            },
+
+            "PCY-LZ-PROD-OIC-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-prod-oic-admin-sec",
+                "description"                                  : "Allow grp-lz-prod-oic-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use vaults in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read keys in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to use key-delegate in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-oic-admin' to read logging-family in compartment cmp-lz-prod-security"
+                ]
+            },
+
+            "PCY-LZ-TEST-DB-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-test-db-admin",
+                "description"                                  : "Allow grp-lz-test-db-admin group users to manage database resources only in test compartments.",
+                "compartment_id"                               : "CMP-LZ-TEST-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to manage autonomous-database-family in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read metrics in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read alarms in compartment cmp-lz-test-platform"
+                ]
+            },
+
+            "PCY-LZ-TEST-DB-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-test-db-admin-net",
+                "description"                                  : "Allow grp-lz-test-db-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-TEST-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use virtual-network-family in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use subnets in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use network-security-groups in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use vnics in compartment cmp-lz-test-network",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to manage private-ips in compartment cmp-lz-test-network"
+                ]
+            },
+
+            "PCY-LZ-TEST-DB-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-test-db-admin-sec",
+                "description"                                  : "Allow grp-lz-test-db-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-TEST-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use vaults in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read keys in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use key-delegate in compartment cmp-lz-test-security"
+                ]
+            },
+
+            "PCY-LZ-DEV-DB-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-dev-db-admin",
+                "description"                                  : "Allow grp-lz-dev-db-admin group users to manage database resources only in development compartments.",
+                "compartment_id"                               : "CMP-LZ-DEV-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to manage autonomous-database-family in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read metrics in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read alarms in compartment cmp-lz-dev-platform"
+                ]
+            },
+
+            "PCY-LZ-DEV-DB-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-dev-db-admin-net",
+                "description"                                  : "Allow grp-lz-dev-db-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-DEV-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use virtual-network-family in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use subnets in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use network-security-groups in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use vnics in compartment cmp-lz-dev-network",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to manage private-ips in compartment cmp-lz-dev-network"
+                ]
+            },
+
+            "PCY-LZ-DEV-DB-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-dev-db-admin-sec",
+                "description"                                  : "Allow grp-lz-dev-db-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-DEV-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use vaults in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read keys in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use key-delegate in compartment cmp-lz-dev-security"
+                ]
+            },
+
+            "PCY-LZ-PROD-DB-ADMIN-KEY": {
+                "name"                                         : "pcy-lz-prod-db-admin",
+                "description"                                  : "Allow grp-lz-prod-db-admin group users to manage database resources only in production compartments.",
+                "compartment_id"                               : "CMP-LZ-PROD-PLATFORM-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to manage autonomous-database-family in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read metrics in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read alarms in compartment cmp-lz-prod-platform"
+                ]
+            },
+
+            "PCY-LZ-PROD-DB-ADMIN-NET-KEY": {
+                "name"                                         : "pcy-lz-prod-db-admin-net",
+                "description"                                  : "Allow grp-lz-prod-db-admin group to use shared network resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-NETWORK-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use virtual-network-family in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use subnets in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use network-security-groups in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use vnics in compartment cmp-lz-prod-network",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to manage private-ips in compartment cmp-lz-prod-network"
+                ]
+            },
+
+            "PCY-LZ-PROD-DB-ADMIN-SEC-KEY": {
+                "name"                                         : "pcy-lz-prod-db-admin-sec",
+                "description"                                  : "Allow grp-lz-prod-db-admin group to use shared security resources.",
+                "compartment_id"                               : "CMP-LZ-PROD-SECURITY-KEY",
+
+                "statements": [
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use vaults in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read keys in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use key-delegate in compartment cmp-lz-prod-security"
                 ]
             }
         }
