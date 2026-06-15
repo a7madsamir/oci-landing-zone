@@ -1058,6 +1058,15 @@
                                         "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "db_oic_1522": {
+                                        "description"                     : "Allow inbound from PROD OIC private endpoint NSG over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-PROD-OIC-PE-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 },
 
@@ -1113,6 +1122,25 @@
                                         "description"                     : "Allow all outbound traffic to 0.0.0.0/0 over TCP",
                                         "dst"                             : "0.0.0.0/0",
                                         "dst_type"                        : "CIDR_BLOCK",
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    }
+                                }
+                            },
+
+                            "NSG-FRA-LZ-PROD-OIC-PE-KEY": {
+                                "display_name"                            : "nsg-fra-lz-prod-oic-pe",
+                                "compartment_id"                          : "CMP-LZ-PROD-PLATFORM-KEY",
+
+                                "ingress_rules": {},
+
+                                "egress_rules": {
+                                    "adb_1522": {
+                                        "description"                     : "Allow outbound to PROD DB NSG over TCP 1522 for Autonomous Database private endpoint",
+                                        "dst"                             : "NSG-FRA-LZ-PROD-PROJ1-DB-KEY",
+                                        "dst_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
                                     }
@@ -1388,6 +1416,15 @@
                                         "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "db_oic_1522": {
+                                        "description"                     : "Allow inbound from TEST OIC private endpoint NSG over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-TEST-OIC-PE-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 },
 
@@ -1396,6 +1433,25 @@
                                         "description"                     : "Allow all outbound traffic to 0.0.0.0/0 over TCP",
                                         "dst"                             : "0.0.0.0/0",
                                         "dst_type"                        : "CIDR_BLOCK",
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    }
+                                }
+                            },
+
+                            "NSG-FRA-LZ-TEST-OIC-PE-KEY": {
+                                "display_name"                            : "nsg-fra-lz-test-oic-pe",
+                                "compartment_id"                          : "CMP-LZ-TEST-PLATFORM-KEY",
+
+                                "ingress_rules": {},
+
+                                "egress_rules": {
+                                    "adb_1522": {
+                                        "description"                     : "Allow outbound to TEST DB NSG over TCP 1522 for Autonomous Database private endpoint",
+                                        "dst"                             : "NSG-FRA-LZ-TEST-PROJ1-DB-KEY",
+                                        "dst_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
                                     }
@@ -1671,6 +1727,15 @@
                                         "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "db_oic_1522": {
+                                        "description"                     : "Allow inbound from DEV OIC private endpoint NSG over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-DEV-OIC-PE-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 },
 
@@ -1679,6 +1744,25 @@
                                         "description"                     : "Allow all outbound traffic to 0.0.0.0/0 over TCP",
                                         "dst"                             : "0.0.0.0/0",
                                         "dst_type"                        : "CIDR_BLOCK",
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    }
+                                }
+                            },
+
+                            "NSG-FRA-LZ-DEV-OIC-PE-KEY": {
+                                "display_name"                            : "nsg-fra-lz-dev-oic-pe",
+                                "compartment_id"                          : "CMP-LZ-DEV-PLATFORM-KEY",
+
+                                "ingress_rules": {},
+
+                                "egress_rules": {
+                                    "adb_1522": {
+                                        "description"                     : "Allow outbound to DEV DB NSG over TCP 1522 for Autonomous Database private endpoint",
+                                        "dst"                             : "NSG-FRA-LZ-DEV-PROJ1-DB-KEY",
+                                        "dst_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
                                     }
