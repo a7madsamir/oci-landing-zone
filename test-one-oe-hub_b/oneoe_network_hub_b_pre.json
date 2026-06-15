@@ -1049,6 +1049,15 @@
                                         "dst_port_max"                    : 1521,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "db_1522": {
+                                        "description"                     : "Allow inbound from NSG nsg-fra-lz-prod-proj1-app over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-PROD-PROJ1-APP-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 },
 
@@ -1370,6 +1379,15 @@
                                         "dst_port_max"                    : 1521,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "db_1522": {
+                                        "description"                     : "Allow inbound from NSG nsg-fra-lz-test-proj1-app over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-TEST-PROJ1-APP-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 },
 
@@ -1642,6 +1660,15 @@
                                         "src_type"                        : "NETWORK_SECURITY_GROUP",
                                         "dst_port_min"                    : 1521,
                                         "dst_port_max"                    : 1521,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    },
+                                    "db_1522": {
+                                        "description"                     : "Allow inbound from NSG nsg-fra-lz-dev-proj1-app over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-DEV-PROJ1-APP-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
                                     }
