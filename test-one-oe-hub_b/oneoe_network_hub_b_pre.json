@@ -1143,8 +1143,36 @@
                                         "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "adb_platform_1522": {
+                                        "description"                     : "Allow outbound to PROD platform ADB private endpoint NSG over TCP 1522",
+                                        "dst"                             : "NSG-FRA-LZ-PROD-ADB-PE-KEY",
+                                        "dst_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 }
+                            },
+
+                            "NSG-FRA-LZ-PROD-ADB-PE-KEY": {
+                                "display_name"                            : "nsg-fra-lz-prod-adb-pe",
+                                "compartment_id"                          : "CMP-LZ-PROD-PLATFORM-KEY",
+
+                                "ingress_rules": {
+                                    "db_oic_1522": {
+                                        "description"                     : "Allow inbound from PROD OIC private endpoint NSG over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-PROD-OIC-PE-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    }
+                                },
+
+                                "egress_rules": {}
                             }
                         },
 
@@ -1454,8 +1482,36 @@
                                         "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "adb_platform_1522": {
+                                        "description"                     : "Allow outbound to TEST platform ADB private endpoint NSG over TCP 1522",
+                                        "dst"                             : "NSG-FRA-LZ-TEST-ADB-PE-KEY",
+                                        "dst_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 }
+                            },
+
+                            "NSG-FRA-LZ-TEST-ADB-PE-KEY": {
+                                "display_name"                            : "nsg-fra-lz-test-adb-pe",
+                                "compartment_id"                          : "CMP-LZ-TEST-PLATFORM-KEY",
+
+                                "ingress_rules": {
+                                    "db_oic_1522": {
+                                        "description"                     : "Allow inbound from TEST OIC private endpoint NSG over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-TEST-OIC-PE-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    }
+                                },
+
+                                "egress_rules": {}
                             }
                         },
 
@@ -1765,8 +1821,36 @@
                                         "dst_port_max"                    : 1522,
                                         "protocol"                        : "TCP",
                                         "stateless"                       : false
+                                    },
+                                    "adb_platform_1522": {
+                                        "description"                     : "Allow outbound to DEV platform ADB private endpoint NSG over TCP 1522",
+                                        "dst"                             : "NSG-FRA-LZ-DEV-ADB-PE-KEY",
+                                        "dst_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
                                     }
                                 }
+                            },
+
+                            "NSG-FRA-LZ-DEV-ADB-PE-KEY": {
+                                "display_name"                            : "nsg-fra-lz-dev-adb-pe",
+                                "compartment_id"                          : "CMP-LZ-DEV-PLATFORM-KEY",
+
+                                "ingress_rules": {
+                                    "db_oic_1522": {
+                                        "description"                     : "Allow inbound from DEV OIC private endpoint NSG over TCP 1522",
+                                        "src"                             : "NSG-FRA-LZ-DEV-OIC-PE-KEY",
+                                        "src_type"                        : "NETWORK_SECURITY_GROUP",
+                                        "dst_port_min"                    : 1522,
+                                        "dst_port_max"                    : 1522,
+                                        "protocol"                        : "TCP",
+                                        "stateless"                       : false
+                                    }
+                                },
+
+                                "egress_rules": {}
                             }
                         },
 
