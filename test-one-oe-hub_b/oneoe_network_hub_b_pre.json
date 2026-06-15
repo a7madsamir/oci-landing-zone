@@ -10,7 +10,7 @@
                 "vcns": {
                     "VCN-FRA-LZ-HUB-KEY": {
                         "display_name"                                    : "vcn-fra-lz-hub",
-                        "cidr_blocks"                                     : ["10.0.0.0/21"],
+                        "cidr_blocks"                                     : ["10.90.8.0/21"],
                         "dns_label"                                       : "vcnfralzhub",
                         "block_nat_traffic"                               : false,
                         "is_attach_drg"                                   : false,
@@ -21,7 +21,7 @@
                         "subnets": {
                             "SN-FRA-LZ-HUB-LB-KEY": {
                                 "display_name"                            : "sn-fra-lz-hub-lb",
-                                "cidr_block"                              : "10.0.0.0/24",
+                                "cidr_block"                              : "10.90.8.0/24",
                                 "dns_label"                               : "snfrahublb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : false,
@@ -32,7 +32,7 @@
 
                             "SN-FRA-LZ-HUB-FW-KEY": {
                                 "display_name"                            : "sn-fra-lz-hub-fw",
-                                "cidr_block"                              : "10.0.1.0/24",
+                                "cidr_block"                              : "10.90.9.0/24",
                                 "dns_label"                               : "snfrahubfw",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -43,7 +43,7 @@
 
                             "SN-FRA-LZ-HUB-MGMT-KEY": {
                                 "display_name"                            : "sn-fra-lz-hub-mgmt",
-                                "cidr_block"                              : "10.0.2.0/24",
+                                "cidr_block"                              : "10.90.10.0/24",
                                 "dns_label"                               : "snfrahubmgmt",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -54,7 +54,7 @@
 
                             "SN-FRA-LZ-HUB-MON-KEY": {
                                 "display_name"                            : "sn-fra-lz-hub-mon",
-                                "cidr_block"                              : "10.0.3.0/24",
+                                "cidr_block"                              : "10.90.11.0/24",
                                 "dns_label"                               : "snfrahubmon",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -65,7 +65,7 @@
 
                             "SN-FRA-LZ-HUB-DNS": {
                                 "display_name"                            : "sn-fra-lz-hub-dns",
-                                "cidr_block"                              : "10.0.4.0/24",
+                                "cidr_block"                              : "10.90.12.0/24",
                                 "dns_label"                               : "snfrahubdns",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -107,21 +107,21 @@
 
                                     "rt-fra-prod-projects": {
                                         "description"                     : "Route to VCN Prod Projects through DRG",
-                                        "destination"                     : "10.0.64.0/21",
+                                        "destination"                     : "10.90.16.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
                                         "network_entity_key"              : "DRG-FRA-LZ-HUB-KEY"
                                     },
 
                                     "rt-fra-Test-projects": {
                                         "description"                     : "Route to VCN Test Projects through DRG",
-                                        "destination"                     : "10.0.128.0/21",
+                                        "destination"                     : "10.90.24.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
                                         "network_entity_key"              : "DRG-FRA-LZ-HUB-KEY"
                                     },
 
                                     "rt-fra-Dev-projects": {
                                         "description"                     : "Route to VCN Dev Projects through DRG",
-                                        "destination"                     : "10.0.192.0/21",
+                                        "destination"                     : "10.90.32.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
                                         "network_entity_key"              : "DRG-FRA-LZ-HUB-KEY"
                                     }
@@ -139,21 +139,21 @@
                                 "route_rules": {
                                     "rt-fra-prod-projects": {
                                         "description"                     : "Route to VCN Prod Projects through DRG",
-                                        "destination"                     : "10.0.64.0/21",
+                                        "destination"                     : "10.90.16.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
                                         "network_entity_key"              : "DRG-FRA-LZ-HUB-KEY"
                                     },
 
                                     "rt-fra-test-projects": {
                                         "description"                     : "Route to VCN Test Projects through DRG",
-                                        "destination"                     : "10.0.128.0/21",
+                                        "destination"                     : "10.90.24.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
                                         "network_entity_key"              : "DRG-FRA-LZ-HUB-KEY"
                                     },
 
                                     "rt-fra-dev-projects": {
                                         "description"                     : "Route to VCN Dev Projects through DRG",
-                                        "destination"                     : "10.0.192.0/21",
+                                        "destination"                     : "10.90.32.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
                                         "network_entity_key"              : "DRG-FRA-LZ-HUB-KEY"
                                     },
@@ -190,7 +190,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 3",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 3,
@@ -198,7 +198,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 8 (Echo)",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -224,7 +224,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 3",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 3,
@@ -232,7 +232,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 8 (Echo)",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -257,7 +257,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 3",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 3,
@@ -265,7 +265,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 8 (Echo)",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -274,7 +274,7 @@
                                     },
                                     {
                                         "description"                     : "EXAMPLE: Allow inbound traffic from the Bastion Service private endpoint IP address",
-                                        "src"                             : "10.0.2.123/32",
+                                        "src"                             : "10.90.10.123/32",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
@@ -338,7 +338,7 @@
                                 "ingress_rules": {
                                     "from_lb": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over all protocols",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ALL",
                                         "stateless"                       : true
@@ -346,7 +346,7 @@
 
                                     "from_prod_http": {
                                         "description"                     : "Allow inbound traffic from Prod VCN over HTTP",
-                                        "src"                             : "10.0.64.0/21",
+                                        "src"                             : "10.90.16.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 80,
                                         "dst_port_max"                    : 80,
@@ -356,7 +356,7 @@
 
                                     "from_prod_https": {
                                         "description"                     : "Allow inbound traffic from Prod VCN over HTTPS",
-                                        "src"                             : "10.0.64.0/21",
+                                        "src"                             : "10.90.16.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 443,
                                         "dst_port_max"                    : 443,
@@ -366,7 +366,7 @@
 
                                     "from_prod_icmp": {
                                         "description"                     : "Allow ICMP type 8 (Echo) from Prod VCN ",
-                                        "src"                             : "10.0.64.0/21",
+                                        "src"                             : "10.90.16.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -376,7 +376,7 @@
 
                                     "from_test_http": {
                                         "description"                     : "Allow inbound traffic from Test VCN over HTTP",
-                                        "src"                             : "10.0.128.0/21",
+                                        "src"                             : "10.90.24.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 80,
                                         "dst_port_max"                    : 80,
@@ -386,7 +386,7 @@
 
                                     "from_test_https": {
                                         "description"                     : "Allow inbound traffic from Test VCN over HTTPS",
-                                        "src"                             : "10.0.128.0/21",
+                                        "src"                             : "10.90.24.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 443,
                                         "dst_port_max"                    : 443,
@@ -396,7 +396,7 @@
 
                                     "from_test_icmp": {
                                         "description"                     : "Allow ICMP type 8 (Echo) from Test VCN ",
-                                        "src"                             : "10.0.128.0/21",
+                                        "src"                             : "10.90.24.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -406,7 +406,7 @@
 
                                     "from_dev_http": {
                                         "description"                     : "Allow inbound traffic from Dev VCN over HTTP",
-                                        "src"                             : "10.0.192.0/21",
+                                        "src"                             : "10.90.32.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 80,
                                         "dst_port_max"                    : 80,
@@ -416,7 +416,7 @@
 
                                     "from_dev_https": {
                                         "description"                     : "Allow inbound traffic from Dev VCN over HTTPS",
-                                        "src"                             : "10.0.192.0/21",
+                                        "src"                             : "10.90.32.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 443,
                                         "dst_port_max"                    : 443,
@@ -426,7 +426,7 @@
 
                                     "from_dev_icmp": {
                                         "description"                     : "Allow ICMP type 8 (Echo) from Dev VCN ",
-                                        "src"                             : "10.0.192.0/21",
+                                        "src"                             : "10.90.32.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -438,7 +438,7 @@
                                 "egress_rules": {
                                     "to_lb": {
                                         "description"                     : "Allow all outbound traffic to LB subnet over all protocols",
-                                        "dst"                             : "10.0.0.0/24",
+                                        "dst"                             : "10.90.8.0/24",
                                         "dst_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ALL",
                                         "stateless"                       : true
@@ -629,7 +629,7 @@
 
                                     "backends": {
                                         "LBBE-FRA-LZ-PROD-01-KEY": {
-                                            "ip_address"                  : "10.0.64.10",
+                                            "ip_address"                  : "10.90.16.10",
                                             "port"                        : 80
                                         }
                                     },
@@ -652,7 +652,7 @@
 
                                     "backends": {
                                         "LBBE-FRA-LZ-PROD-02-KEY": {
-                                            "ip_address"                  : "10.0.64.20",
+                                            "ip_address"                  : "10.90.16.20",
                                             "port"                        : 80
                                         }
                                     },
@@ -759,31 +759,31 @@
                                     "NFW-FRA-LZ-ADDRLIST-PROD-KEY": {
                                         "name"                            : "nfw-fra-lz-addrlist-prod",
                                         "type"                            : "IP",
-                                        "addresses"                       : ["10.0.64.0/21"]
+                                        "addresses"                       : ["10.90.16.0/21"]
                                     },
 
                                     "NFW-FRA-LZ-ADDRLIST-LB-KEY": {
                                         "name"                            : "nfw-fra-lz-addrlist-lb",
                                         "type"                            : "IP",
-                                        "addresses"                       : ["10.0.0.0/24"]
+                                        "addresses"                       : ["10.90.8.0/24"]
                                     },
 
                                     "NFW-FRA-LZ-ADDRLIST-TEST-KEY": {
                                         "name"                            : "nfw-fra-lz-addrlist-test",
                                         "type"                            : "IP",
-                                        "addresses"                       : ["10.0.128.0/21"]
+                                        "addresses"                       : ["10.90.24.0/21"]
                                     },
 
                                     "NFW-FRA-LZ-ADDRLIST-DEV-KEY": {
                                         "name"                            : "nfw-fra-lz-addrlist-dev",
                                         "type"                            : "IP",
-                                        "addresses"                       : ["10.0.192.0/21"]
+                                        "addresses"                       : ["10.90.32.0/21"]
                                     },
 
                                     "NFW-FRA-LZ-ADDRLIST-SPOKES-KEY": {
                                         "name"                            : "nfw-fra-lz-addrlist-spokes",
                                         "type"                            : "IP",
-                                        "addresses"                       : ["10.0.64.0/21", "10.0.128.0/21", "10.0.192.0/21"]
+                                        "addresses"                       : ["10.90.16.0/21", "10.90.24.0/21", "10.90.32.0/21"]
                                     }
                                 },
 
@@ -839,7 +839,7 @@
                         "network_firewalls": {
                             "NFW-FRA-LZ-HUB-KEY": {
                                 "display_name"                            : "nfw-fra-lz-hub",
-                                "ipv4address"                             : "10.0.1.10",
+                                "ipv4address"                             : "10.90.9.10",
                                 "subnet_key"                              : "SN-FRA-LZ-HUB-FW-KEY",
                                 "network_firewall_policy_key"             : "NFW-FRA-LZ-POLICY-01-KEY",
                                 "network_security_group_keys"             : ["NSG-FRA-LZ-HUB-FW-KEY"]
@@ -855,7 +855,7 @@
                 "vcns": {
                     "VCN-FRA-LZ-PROD-PROJECTS-KEY": {
                         "display_name"                                    : "vcn-fra-lz-prod-projects",
-                        "cidr_blocks"                                     : ["10.0.64.0/21"],
+                        "cidr_blocks"                                     : ["10.90.16.0/21"],
                         "dns_label"                                       : "vcnfralzpproj",
                         "block_nat_traffic"                               : false,
                         "is_attach_drg"                                   : false,
@@ -866,7 +866,7 @@
                         "subnets": {
                             "SN-FRA-LZ-PROD-WEB-KEY": {
                                 "display_name"                            : "sn-fra-lz-prod-web",
-                                "cidr_block"                              : "10.0.64.0/24",
+                                "cidr_block"                              : "10.90.16.0/24",
                                 "dns_label"                               : "snfralzpweb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -877,7 +877,7 @@
 
                             "SN-FRA-LZ-PROD-APP-KEY": {
                                 "display_name"                            : "sn-fra-lz-prod-app",
-                                "cidr_block"                              : "10.0.65.0/24",
+                                "cidr_block"                              : "10.90.17.0/24",
                                 "dns_label"                               : "snfralzpapp",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -888,7 +888,7 @@
 
                             "SN-FRA-LZ-PROD-DB-KEY": {
                                 "display_name"                            : "sn-fra-lz-prod-db",
-                                "cidr_block"                              : "10.0.66.0/24",
+                                "cidr_block"                              : "10.90.18.0/24",
                                 "dns_label"                               : "snfralzpdb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -899,7 +899,7 @@
 
                             "SN-FRA-LZ-PROD-INFRA-KEY": {
                                 "display_name"                            : "sn-fra-lz-prod-infra",
-                                "cidr_block"                              : "10.0.67.0/24",
+                                "cidr_block"                              : "10.90.19.0/24",
                                 "dns_label"                               : "snfralzpinfr",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -952,7 +952,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 3",
-                                        "src"                             : "10.0.64.0/21",
+                                        "src"                             : "10.90.16.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 3,
@@ -960,7 +960,7 @@
                                     },
                                     {
                                         "description"                     : "Allow inbound ICMP type 8 (Echo) from Hub VCN",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -1016,7 +1016,7 @@
 
                                     "ssh_22": {
                                         "description"                     : "Allow inbound traffic from Hub management subnet over SSH",
-                                        "src"                             : "10.0.2.0/24",
+                                        "src"                             : "10.90.10.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
@@ -1070,7 +1070,7 @@
                                 "ingress_rules": {
                                     "http_80": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over HTTP",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 80,
                                         "dst_port_max"                    : 80,
@@ -1080,7 +1080,7 @@
 
                                     "https_443": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over over HTTPS",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 443,
                                         "dst_port_max"                    : 443,
@@ -1090,7 +1090,7 @@
 
                                     "ssh_22": {
                                         "description"                     : "Allow inbound traffic from Hub management subnet over SSH",
-                                        "src"                             : "10.0.2.0/24",
+                                        "src"                             : "10.90.10.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
@@ -1129,7 +1129,7 @@
                 "vcns": {
                     "VCN-FRA-LZ-TEST-PROJECTS-KEY": {
                         "display_name"                                    : "vcn-fra-lz-test-projects",
-                        "cidr_blocks"                                     : ["10.0.128.0/21"],
+                        "cidr_blocks"                                     : ["10.90.24.0/21"],
                         "dns_label"                                       : "vcnfralztestproj",
                         "block_nat_traffic"                               : false,
                         "is_attach_drg"                                   : false,
@@ -1140,7 +1140,7 @@
                         "subnets": {
                             "SN-FRA-LZ-TEST-WEB-KEY": {
                                 "display_name"                            : "sn-fra-lz-test-web",
-                                "cidr_block"                              : "10.0.128.0/24",
+                                "cidr_block"                              : "10.90.24.0/24",
                                 "dns_label"                               : "snfralztestweb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1151,7 +1151,7 @@
 
                             "SN-FRA-LZ-TEST-APP-KEY": {
                                 "display_name"                            : "sn-fra-lz-test-app",
-                                "cidr_block"                              : "10.0.129.0/24",
+                                "cidr_block"                              : "10.90.25.0/24",
                                 "dns_label"                               : "snfralztestapp",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1162,7 +1162,7 @@
 
                             "SN-FRA-LZ-TEST-DB-KEY": {
                                 "display_name"                            : "sn-fra-lz-test-db",
-                                "cidr_block"                              : "10.0.130.0/24",
+                                "cidr_block"                              : "10.90.26.0/24",
                                 "dns_label"                               : "snfralztestdb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1173,7 +1173,7 @@
 
                             "SN-FRA-LZ-TEST-INFRA-KEY": {
                                 "display_name"                            : "sn-fra-lz-test-infra",
-                                "cidr_block"                              : "10.0.131.0/24",
+                                "cidr_block"                              : "10.90.27.0/24",
                                 "dns_label"                               : "snfralztestinfr",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1226,7 +1226,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 3",
-                                        "src"                             : "10.0.128.0/21",
+                                        "src"                             : "10.90.24.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 3,
@@ -1234,7 +1234,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 8 (Echo)",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -1270,7 +1270,7 @@
                                 "ingress_rules": {
                                     "http_80": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over HTTP",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 80,
                                         "dst_port_max"                    : 80,
@@ -1280,7 +1280,7 @@
 
                                     "https_443": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over over HTTPS",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 443,
                                         "dst_port_max"                    : 443,
@@ -1290,7 +1290,7 @@
 
                                     "ssh_22": {
                                         "description"                     : "Allow inbound traffic from Hub management subnet over SSH",
-                                        "src"                             : "10.0.2.0/24",
+                                        "src"                             : "10.90.10.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
@@ -1337,7 +1337,7 @@
 
                                     "ssh_22": {
                                         "description"                     : "Allow inbound traffic from Hub management subnet over SSH",
-                                        "src"                             : "10.0.2.0/24",
+                                        "src"                             : "10.90.10.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
@@ -1403,7 +1403,7 @@
                 "vcns": {
                     "VCN-FRA-LZ-DEV-PROJECTS-KEY": {
                         "display_name"                                    : "vcn-fra-lz-dev-projects",
-                        "cidr_blocks"                                     : ["10.0.192.0/21"],
+                        "cidr_blocks"                                     : ["10.90.32.0/21"],
                         "dns_label"                                       : "vcnfralzdevproj",
                         "block_nat_traffic"                               : false,
                         "is_attach_drg"                                   : false,
@@ -1414,7 +1414,7 @@
                         "subnets": {
                             "SN-FRA-LZ-DEV-WEB-KEY": {
                                 "display_name"                            : "sn-fra-lz-dev-web",
-                                "cidr_block"                              : "10.0.192.0/24",
+                                "cidr_block"                              : "10.90.32.0/24",
                                 "dns_label"                               : "snfralzdevweb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1425,7 +1425,7 @@
 
                             "SN-FRA-LZ-DEV-APP-KEY": {
                                 "display_name"                            : "sn-fra-lz-dev-app",
-                                "cidr_block"                              : "10.0.193.0/24",
+                                "cidr_block"                              : "10.90.33.0/24",
                                 "dns_label"                               : "snfralzdevapp",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1436,7 +1436,7 @@
 
                             "SN-FRA-LZ-DEV-DB-KEY": {
                                 "display_name"                            : "sn-fra-lz-dev-db",
-                                "cidr_block"                              : "10.0.194.0/24",
+                                "cidr_block"                              : "10.90.34.0/24",
                                 "dns_label"                               : "snfralzdevdb",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1447,7 +1447,7 @@
 
                             "SN-FRA-LZ-DEV-INFRA-KEY": {
                                 "display_name"                            : "sn-fra-lz-dev-infra",
-                                "cidr_block"                              : "10.0.195.0/24",
+                                "cidr_block"                              : "10.90.35.0/24",
                                 "dns_label"                               : "snfralzdevinfr",
                                 "dhcp_options_key"                        : "default_dhcp_options",
                                 "prohibit_internet_ingress"               : true,
@@ -1500,7 +1500,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 3",
-                                        "src"                             : "10.0.192.0/21",
+                                        "src"                             : "10.90.32.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 3,
@@ -1508,7 +1508,7 @@
                                     },
                                     {
                                         "description"                     : "ICMP type 8 (Echo)",
-                                        "src"                             : "10.0.0.0/21",
+                                        "src"                             : "10.90.8.0/21",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "protocol"                        : "ICMP",
                                         "icmp_type"                       : 8,
@@ -1544,7 +1544,7 @@
                                 "ingress_rules": {
                                     "http_80": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over HTTP",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 80,
                                         "dst_port_max"                    : 80,
@@ -1554,7 +1554,7 @@
 
                                     "https_443": {
                                         "description"                     : "Allow inbound traffic from Hub LB subnet over over HTTPS",
-                                        "src"                             : "10.0.0.0/24",
+                                        "src"                             : "10.90.8.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 443,
                                         "dst_port_max"                    : 443,
@@ -1564,7 +1564,7 @@
 
                                     "ssh_22": {
                                         "description"                     : "Allow inbound traffic from Hub management subnet over SSH",
-                                        "src"                             : "10.0.2.0/24",
+                                        "src"                             : "10.90.10.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
@@ -1611,7 +1611,7 @@
 
                                     "ssh_22": {
                                         "description"                     : "Allow inbound traffic from Hub management subnet over SSH",
-                                        "src"                             : "10.0.2.0/24",
+                                        "src"                             : "10.90.10.0/24",
                                         "src_type"                        : "CIDR_BLOCK",
                                         "dst_port_min"                    : 22,
                                         "dst_port_max"                    : 22,
