@@ -806,6 +806,7 @@
 
                 "statements": [
                     "allow group 'id_lz_common'/'grp-lz-test-db-admin' to manage autonomous-database-family in compartment cmp-lz-test-platform",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to manage database-tools-family in compartment cmp-lz-test-platform",
                     "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read metrics in compartment cmp-lz-test-platform",
                     "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read alarms in compartment cmp-lz-test-platform"
                 ]
@@ -832,6 +833,7 @@
 
                 "statements": [
                     "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use vaults in compartment cmp-lz-test-security",
+                    "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read secret-family in compartment cmp-lz-test-security",
                     "allow group 'id_lz_common'/'grp-lz-test-db-admin' to read keys in compartment cmp-lz-test-security",
                     "allow group 'id_lz_common'/'grp-lz-test-db-admin' to use key-delegate in compartment cmp-lz-test-security"
                 ]
@@ -844,6 +846,7 @@
 
                 "statements": [
                     "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to manage autonomous-database-family in compartment cmp-lz-dev-platform",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to manage database-tools-family in compartment cmp-lz-dev-platform",
                     "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read metrics in compartment cmp-lz-dev-platform",
                     "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read alarms in compartment cmp-lz-dev-platform"
                 ]
@@ -870,6 +873,7 @@
 
                 "statements": [
                     "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use vaults in compartment cmp-lz-dev-security",
+                    "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read secret-family in compartment cmp-lz-dev-security",
                     "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to read keys in compartment cmp-lz-dev-security",
                     "allow group 'id_lz_common'/'grp-lz-dev-db-admin' to use key-delegate in compartment cmp-lz-dev-security"
                 ]
@@ -882,6 +886,7 @@
 
                 "statements": [
                     "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to manage autonomous-database-family in compartment cmp-lz-prod-platform",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to manage database-tools-family in compartment cmp-lz-prod-platform",
                     "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read metrics in compartment cmp-lz-prod-platform",
                     "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read alarms in compartment cmp-lz-prod-platform"
                 ]
@@ -908,6 +913,7 @@
 
                 "statements": [
                     "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use vaults in compartment cmp-lz-prod-security",
+                    "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read secret-family in compartment cmp-lz-prod-security",
                     "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to read keys in compartment cmp-lz-prod-security",
                     "allow group 'id_lz_common'/'grp-lz-prod-db-admin' to use key-delegate in compartment cmp-lz-prod-security"
                 ]
