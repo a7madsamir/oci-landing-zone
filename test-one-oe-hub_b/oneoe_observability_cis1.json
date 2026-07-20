@@ -428,7 +428,7 @@
                 "subscriptions": [
                     {
                         "protocol"              : "EMAIL",
-                        "values"                : ["email.address@example.com"]
+                        "values"                : ["ossama.gawad@aucegypt.edu", "m_kamala@aucegypt.edu"]
                     }
                 ]
             },
@@ -441,7 +441,7 @@
                 "subscriptions": [
                     {
                         "protocol"              : "EMAIL",
-                        "values"                : ["email.address@example.com"]
+                        "values"                : ["ossama.gawad@aucegypt.edu", "m_kamala@aucegypt.edu"]
                     }
                 ]
             },
@@ -454,7 +454,7 @@
                 "subscriptions": [
                     {
                         "protocol"              : "EMAIL",
-                        "values"                : ["email.address@example.com"]
+                        "values"                : ["ossama.gawad@aucegypt.edu", "m_kamala@aucegypt.edu"]
                     }
                 ]
             },
@@ -467,7 +467,7 @@
                 "subscriptions": [
                     {
                         "protocol"              : "EMAIL",
-                        "values"                : ["email.address@example.com"]
+                        "values"                : ["ossama.gawad@aucegypt.edu", "m_kamala@aucegypt.edu"]
                     }
                 ]
             }
