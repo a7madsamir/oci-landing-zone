@@ -1384,7 +1384,7 @@
                     "VCN-FRA-LZ-TEST-PROJECTS-KEY": {
                         "display_name"                                    : "vcn-fra-lz-test-projects",
                         "cidr_blocks"                                     : ["10.90.136.0/21"],
-                        "dns_label"                                       : "vcnfralztestproj",
+                        "dns_label"                                       : "vcnfralztproj",
                         "block_nat_traffic"                               : false,
                         "is_attach_drg"                                   : false,
                         "is_create_igw"                                   : false,
