@@ -84,35 +84,35 @@
                                         "description"                     : "Route to the Internet through the OCI Network Firewall",
                                         "destination"                     : "0.0.0.0/0",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-prod-projects": {
                                         "description"                     : "Route to VCN Prod Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.72.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-test-projects": {
                                         "description"                     : "Route to VCN Test Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.136.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-dev-projects": {
                                         "description"                     : "Route to VCN Dev Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.200.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-vcn-fra-hub-lb-sn": {
                                         "description"                     : "Route to Public LB through the OCI Network Firewall",
                                         "destination"                     : "10.90.8.0/24",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     }
                                 }
                             },
@@ -132,21 +132,21 @@
                                         "description"                     : "Route to VCN Prod Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.72.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-test-projects": {
                                         "description"                     : "Route to VCN Test Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.136.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-dev-projects": {
                                         "description"                     : "Route to VCN Dev Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.200.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     }
                                 }
                             },
@@ -193,42 +193,42 @@
                                         "description"                     : "Route to mgmt subnet in Hub VCN through OCI Network Firewall",
                                         "destination"                     : "10.90.10.0/24",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-vcn-fra-hub-logs-sn": {
                                         "description"                     : "Route to mon subnet in Hub VCN through OCI Network Firewall",
                                         "destination"                     : "10.90.11.0/24",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-vcn-fra-hub-dns-sn": {
                                         "description"                     : "Route to dns subnet in Hub VCN through OCI Network Firewall",
                                         "destination"                     : "10.90.12.0/24",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-prod-projects": {
                                         "description"                     : "Route to VCN Prod Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.72.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-test-projects": {
                                         "description"                     : "Route to VCN Test Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.136.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-dev-projects": {
                                         "description"                     : "Route to VCN Dev Projects through OCI Network Firewall",
                                         "destination"                     : "10.90.200.0/21",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     }
                                 }
                             },
@@ -241,7 +241,7 @@
                                         "description"                     : "Route to the Internet through the OCI Network Firewall",
                                         "destination"                     : "0.0.0.0/0",
                                         "destination_type"                : "CIDR_BLOCK",
-                                        "network_entity_id"               : "OCI NFW PRIVATE IP OCID, e.g. ocid1.privateip.oc1.eu-frankfurt-1.abtheljs..."
+                                        "network_entity_id"               : "ocid1.privateip.oc1.eu-frankfurt-1.abtheljrq4hjmydtgtathjn3ah5ngytwqe37reimd735i2l2djclllwu6aeq"
                                     },
 
                                     "rt-fra-prod-projects": {
